@@ -1,0 +1,188 @@
+.reset-lineup-button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.reset-lineup-button:hover {
+    background: #c0392b;
+}
+
+.reset-lineup-button i {
+    font-size: 0.9em;
+}
+
+.team-management-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.level-container {
+    position: fixed;
+    top: 10px;
+    right: 150px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    z-index: 1000;
+}
+
+.level-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.xp-bar {
+    width: 100px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.xp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    transition: width 0.3s ease;
+}
+
+.level-text {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.xp-text {
+    font-size: 0.8em;
+    color: #8BC34A;
+}
+
+/* Efsanevi ekipman efekti için animasyonlar */
+@keyframes legendaryGlow {
+    0% {
+        box-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700, 0 0 35px #ffd700;
+    }
+    50% {
+        box-shadow: 0 0 25px #ffd700, 0 0 35px #ffd700, 0 0 45px #ffd700;
+    }
+    100% {
+        box-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700, 0 0 35px #ffd700;
+    }
+}
+
+@keyframes legendaryFlame {
+    0% {
+        background-position: 0% 50%;
+        opacity: 0.8;
+    }
+    50% {
+        background-position: 100% 50%;
+        opacity: 1;
+    }
+    100% {
+        background-position: 0% 50%;
+        opacity: 0.8;
+    }
+}
+
+/* Alev animasyonu için yeni keyframes */
+@keyframes fireAnimation {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-2deg); }
+    50% { transform: scale(1) rotate(0deg); }
+    75% { transform: scale(1.1) rotate(2deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.player-card.legendary-equipped::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: 
+        radial-gradient(circle at 50% 0%, 
+            rgba(255, 140, 0, 0.8) 0%,
+            rgba(255, 215, 0, 0.6) 40%,
+            rgba(255, 69, 0, 0.4) 60%,
+            rgba(255, 0, 0, 0.2) 80%,
+            transparent 100%),
+        linear-gradient(45deg, 
+            #ff8c00 0%,
+            #ffd700 30%,
+            #ff4500 60%,
+            #ff0000 100%);
+    background-size: 200% 200%;
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.8;
+    filter: blur(10px);
+    animation: 
+        legendaryFlame 3s infinite,
+        fireAnimation 2s infinite;
+}
+
+/* Alev parçacıkları için */
+.player-card.legendary-equipped::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: 
+        repeating-radial-gradient(circle at 50% 0%,
+            rgba(255, 140, 0, 0.4) 0%,
+            rgba(255, 215, 0, 0.3) 10%,
+            transparent 20%),
+        repeating-radial-gradient(circle at 50% 100%,
+            rgba(255, 69, 0, 0.4) 0%,
+            rgba(255, 0, 0, 0.3) 10%,
+            transparent 20%);
+    border-radius: 20px;
+    z-index: -2;
+    opacity: 0.6;
+    filter: blur(8px);
+    animation: fireAnimation 3s infinite;
+}
+
+/* Alev emojisi için yeni element */
+.player-card.legendary-equipped .fire-emoji {
+    position: absolute;
+    top: -25px;
+    right: -15px;
+    font-size: 30px;
+    text-shadow: 0 0 10px #ff4500;
+    animation: bounce 1s infinite;
+}
+
+/* Alev parlaması için */
+.player-card.legendary-equipped {
+    position: relative;
+    animation: legendaryGlow 2s infinite;
+    box-shadow: 
+        0 0 15px #ffd700,
+        0 0 25px #ff8c00,
+        0 0 35px #ff4500;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+} 

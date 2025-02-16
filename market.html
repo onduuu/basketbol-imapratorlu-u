@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="market.css">
+</head>
+<body>
+    <header>
+        <h1>NBA Manager Game</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="myteam.html">My Team</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="market.html">Market</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="market-section">
+            <h2>Market</h2>
+            
+            <!-- Market Sekmeleri -->
+            <div class="market-tabs">
+                <button class="market-tab" data-type="supermarket">Süper Market</button>
+                <button class="market-tab active" data-type="players">Oyuncular</button>
+                <button class="market-tab" data-type="equipment">Ekipmanlar</button>
+            </div>
+
+            <!-- Süper Market Bölümü -->
+            <div id="supermarket-section" style="display: none;">
+                <!-- Süper market içeriği JavaScript ile eklenecek -->
+            </div>
+
+            <!-- Oyuncular Bölümü -->
+            <div id="players-section">
+                <div id="position-filters">
+                    <button class="position-filter active" data-position="ALL">Tümü</button>
+                    <button class="position-filter" data-position="PG">Point Guard</button>
+                    <button class="position-filter" data-position="SG">Shooting Guard</button>
+                    <button class="position-filter" data-position="SF">Small Forward</button>
+                    <button class="position-filter" data-position="PF">Power Forward</button>
+                    <button class="position-filter" data-position="C">Center</button>
+                </div>
+                
+                <!-- Normal Market -->
+                <div id="market"></div>
+            </div>
+
+            <!-- Ekipmanlar Bölümü -->
+            <div id="equipment-section" style="display: none;">
+                <!-- Ekipmanlar buraya gelecek -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+    
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="market.js"></script>
+    <script src="player.js"></script>
+    <script src="supermarket.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+/* Training page styles */
+#training-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Player selection styles */
+#player-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* Training types grid */
+.training-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.training-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.training-card:hover {
+    transform: translateY(-5px);
+}
+
+.training-card h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.training-card button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.training-card button:hover {
+    background: #0056b3;
+}
+
+/* Progress styles */
+#player-progress {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#energy-bar {
+    width: 100%;
+    height: 20px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.energy-fill {
+    height: 100%;
+    background: #28a745;
+    transition: width 0.3s ease;
+}
+
+/* Progress stats */
+#progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .training-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Gelişim Yolu Bölümü */
+.development-path {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.skill-tree {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category h4 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.skill-items {
+    display: grid;
+    gap: 12px;
+}
+
+.skill-item {
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.skill-item span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #34495e;
+}
+
+/* Progress Bar Stilleri */
+.progress-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    transition: width 0.5s ease-in-out, background-color 0.5s ease;
+}
+
+.progress.improving {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+
+/* Detaylı İstatistikler */
+.detailed-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.stat-category {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-details {
+    display: grid;
+    gap: 10px;
+}
+
+/* Rozetler ve Başarılar */
+.achievements {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.badge-item {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease;
+}
+
+.badge-item:hover {
+    transform: scale(1.05);
+}
+
+.badge-icon {
+    width: 24px;
+    height: 24px;
+    background: #3498db;
+    border-radius: 50%;
+}
+
+/* Form ve Moral Göstergeleri */
+.player-condition {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.condition-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-indicator, .morale-indicator {
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.form-level, .morale-level {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.form-level {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+
+.morale-level {
+    background: linear-gradient(90deg, #f1c40f, #f39c12);
+}
+
+/* Kondisyon Takibi */
+.condition-tracking {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.condition-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.fatigue-bar {
+    height: 12px;
+    background: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.fatigue-level {
+    height: 100%;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    transition: width 0.3s ease;
+}
+
+.injury-risk {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 8px;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .skill-tree,
+    .detailed-stats,
+    .badges-container {
+        grid-template-columns: 1fr;
+    }
+
+    .badges-container {
+        justify-content: center;
+    }
+}
+
+/* Animasyonlar */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.level-up {
+    animation: pulse 0.5s ease;
+}
+
+/* Gelişim göstergeleri için stiller */
+.skill-change, .stat-change {
+    opacity: 0;
+    animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(0); }
+    20% { opacity: 1; transform: translateY(-5px); }
+    80% { opacity: 1; transform: translateY(-5px); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Değişim göstergesi için alan */
+.stat-details .stat-item {
+    position: relative;
+    padding-right: 45px; /* Değişim göstergesi için yer aç */
+} 

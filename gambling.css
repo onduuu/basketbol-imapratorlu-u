@@ -1,0 +1,180 @@
+body {
+    background-color: rgba(40, 44, 52, 0.95);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(40, 44, 52, 0.95);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.wheel-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#wheel {
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.pointer {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 30px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.controls-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.bet-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#betAmount {
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.color-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bet-button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.bet-button:hover {
+    transform: scale(1.05);
+}
+
+.bet-button.red {
+    background-color: #ff4444;
+    color: white;
+}
+
+.bet-button.black {
+    background-color: #333;
+    color: white;
+}
+
+.spin-button {
+    padding: 15px 40px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.spin-button:hover {
+    background-color: #45a049;
+}
+
+.spin-button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.game-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.wheel-section {
+    flex: 1;
+}
+
+.history-section {
+    width: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.history-section h3 {
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.history-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.history-item.red {
+    background-color: #ff4444;
+}
+
+.history-item.black {
+    background-color: #333;
+} 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şans Oyunu - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gambling.css">
+    <!-- Ortak Font ve Icon Kütüphaneleri -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>NBA Manager Game - Şans Oyunu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="myteam.html">Takımım</a></li>
+                <li><a href="market.html">Market</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="office.html">Ofis</a></li>
+                <li><a href="gambling.html" class="active">Şans Oyunu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="game-container">
+            <div class="game-layout">
+                <div class="wheel-section">
+                    <div class="wheel-container">
+                        <canvas id="wheel" width="500" height="500"></canvas>
+                        <div class="pointer">▲</div>
+                    </div>
+
+                    <div class="controls-section">
+                        <div class="bet-controls">
+                            <input type="number" id="betAmount" placeholder="Bahis Miktarı" min="1">
+                            <div class="color-buttons">
+                                <button id="betRed" class="bet-button red">Kırmızı (2x)</button>
+                                <button id="betBlack" class="bet-button black">Siyah (2x)</button>
+                            </div>
+                        </div>
+                        <button id="spinButton" class="spin-button">BAŞLAT</button>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <h3>Son Sonuçlar</h3>
+                    <div class="history-container" id="historyContainer">
+                        <!-- Sonuçlar buraya JavaScript ile eklenecek -->
+                    </div>
+                </div>
+            </div>
+            <div id="result" class="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="gambling.js"></script>
+</body>
+</html> 

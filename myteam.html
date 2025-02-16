@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Team - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="myteam.css">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>NBA Manager Game</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="myteam.html">My Team</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="scouting.html">Scout</a></li>
+                <li><a href="market.html">Market</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="team-container">
+            <!-- Basketbol Sahası -->
+            <div class="basketball-court">
+                <div class="paint"></div>
+                <div class="rim"></div>
+                <div class="free-throw"></div>
+                <div class="half-court"></div>
+                
+                <!-- Pozisyon slotları -->
+                <div class="position-slots">
+                    <div class="position-slot" data-position="PG">
+                        <div class="position-label">PG</div>
+                    </div>
+                    <div class="position-slot" data-position="SG">
+                        <div class="position-label">SG</div>
+                    </div>
+                    <div class="position-slot" data-position="SF">
+                        <div class="position-label">SF</div>
+                    </div>
+                    <div class="position-slot" data-position="PF">
+                        <div class="position-label">PF</div>
+                    </div>
+                    <div class="position-slot" data-position="C">
+                        <div class="position-label">C</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yedek Oyuncular -->
+            <div class="bench-container">
+                <h3>Yedek Oyuncular</h3>
+                <div class="bench-slots" id="benchSlots">
+                    <!-- Yedek oyuncular buraya gelecek -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="save-button-container">
+        <button onclick="saveTeamPositions()" class="save-button">Dizilişi Kaydet</button>
+    </div>
+
+    <div class="team-management-controls">
+        <button class="reset-lineup-button" onclick="resetStartingFive()">
+            <i class="fas fa-redo"></i> İlk 5'i Sıfırla
+        </button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="myteam.js"></script>
+    <script src="player.js"></script>
+</body>
+</html>

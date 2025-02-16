@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrenman - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="training.css">
+</head>
+<body>
+    <header>
+        <h1>NBA Manager Game</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="myteam.html">My Team</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="market.html">Market</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="training-section">
+            <h2>Antrenman Merkezi</h2>
+            
+            <!-- Kondisyon ve Yorgunluk Takibi -->
+            <div class="condition-tracking">
+                <h3>Kondisyon Durumu</h3>
+                <div class="condition-stats">
+                    <div class="stat-item">
+                        <span>Yorgunluk Seviyesi</span>
+                        <div class="fatigue-bar">
+                            <div class="fatigue-level"></div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span>Sakatlık Riski</span>
+                        <div class="injury-risk">
+                            <span id="injury-percentage">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oyuncu Seçim Bölümü -->
+            <div id="player-selection">
+                <h3>Antrenman Yapacak Oyuncuyu Seçin</h3>
+                <div id="player-list"></div>
+            </div>
+
+            <!-- Antrenman Türleri -->
+            <div id="training-types">
+                <h3>Antrenman Türleri</h3>
+                <div class="training-grid">
+                    <div class="training-card" data-type="shooting">
+                        <h4>Şut Antrenmanı</h4>
+                        <p>Şut isabeti ve sayı potansiyelini artırır</p>
+                        <p>Enerji Tüketimi: 20</p>
+                        <button onclick="startTraining('shooting')">Antrenman Yap</button>
+                    </div>
+                    <div class="training-card" data-type="physical">
+                        <h4>Fiziksel Antrenman</h4>
+                        <p>Güç ve dayanıklılığı artırır</p>
+                        <p>Enerji Tüketimi: 25</p>
+                        <button onclick="startTraining('physical')">Antrenman Yap</button>
+                    </div>
+                    <div class="training-card" data-type="agility">
+                        <h4>Çeviklik Antrenmanı</h4>
+                        <p>Hız ve çevikliği artırır</p>
+                        <p>Enerji Tüketimi: 15</p>
+                        <button onclick="startTraining('agility')">Antrenman Yap</button>
+                    </div>
+                    <div class="training-card" data-type="tactical">
+                        <h4>Taktik Antrenmanı</h4>
+                        <p>Oyun zekası ve pas yeteneğini artırır</p>
+                        <p>Enerji Tüketimi: 15</p>
+                        <button onclick="startTraining('tactical')">Antrenman Yap</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oyuncu Gelişim Durumu -->
+            <div id="player-progress">
+                <h3>Oyuncu Gelişimi</h3>
+                <!-- Form ve Moral -->
+                <div class="player-condition">
+                    <div class="condition-item">
+                        <span>Form</span>
+                        <div class="form-indicator">
+                            <div class="form-level" id="form-level"></div>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <span>Moral</span>
+                        <div class="morale-indicator">
+                            <div class="morale-level" id="morale-level"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="progress-stats"></div>
+                <div id="energy-bar">
+                    <div class="energy-fill"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="training.js"></script>
+    <script src="player.js"></script>
+</body>
+</html>

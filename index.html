@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Ortak Font ve Icon Kütüphaneleri -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>NBA Manager Game</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="myteam.html">Takımım</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="office.html">Ofis</a></li>
+                <li><a href="market.html">Market</a></li>
+                <li><a href="equipment_upgrade.html">Ekipman Güçlendirme</a></li>
+                <li><a href="gambling.html">Şans Oyunu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home-section">
+            <h2>NBA Manager Game'e Hoş Geldiniz</h2>
+            <p>Hayalinizdeki takımı yönetin ve diğer takımlarla rekabet edin!</p>
+            
+            <!-- Ana menü butonları -->
+            <div class="menu-buttons">
+                <button onclick="window.location.href='myteam.html'" class="menu-button">
+                    <i class="fas fa-users"></i>
+                    Takımım
+                </button>
+                <button onclick="window.location.href='tournaments.html'" class="menu-button">
+                    <i class="fas fa-trophy"></i>
+                    Turnuvalar
+                </button>
+                <button onclick="window.location.href='training.html'" class="menu-button">
+                    <i class="fas fa-dumbbell"></i>
+                    Antrenman
+                </button>
+                <button onclick="window.location.href='market.html'" class="menu-button">
+                    <i class="fas fa-store"></i>
+                    Market
+                </button>
+                <button onclick="window.location.href='office.html'" class="menu-button">
+                    <i class="fas fa-briefcase"></i>
+                    Ofis
+                </button>
+                <button onclick="window.location.href='equipment_upgrade.html'" class="menu-button">
+                    <i class="fas fa-tshirt"></i>
+                    Ekipman
+                </button>
+                <button onclick="window.location.href='gambling.html'" class="menu-button">
+                    <i class="fas fa-dice"></i>
+                    Şans Oyunu
+                </button>
+                <button onclick="resetGameData()" class="menu-button reset-button">
+                    <i class="fas fa-redo"></i>
+                    Oyunu Sıfırla
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

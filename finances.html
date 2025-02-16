@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finansal Yönetim - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="finances.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>NBA Manager Game</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="myteam.html">My Team</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="market.html">Market</a></li>
+                <li><a href="finances.html">Finans</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="finances-overview">
+            <h2>Finansal Durum</h2>
+            <div class="balance-container">
+                <div class="balance-card">
+                    <h3>Toplam Bütçe</h3>
+                    <p id="total-balance">$0</p>
+                </div>
+                <div class="balance-card">
+                    <h3>Haftalık Gelir</h3>
+                    <p id="weekly-income">$0</p>
+                </div>
+                <div class="balance-card">
+                    <h3>Haftalık Gider</h3>
+                    <p id="weekly-expenses">$0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="revenue-streams">
+            <h2>Gelir Kaynakları</h2>
+            <div class="revenue-grid">
+                <div class="revenue-card" id="ticket-sales">
+                    <h3>Bilet Satışları</h3>
+                    <div class="revenue-details">
+                        <p>Ortalama Seyirci: <span id="avg-attendance">0</span></p>
+                        <p>Bilet Fiyatı: $<span id="ticket-price">30</span></p>
+                        <button onclick="adjustTicketPrice()">Fiyat Ayarla</button>
+                    </div>
+                </div>
+                
+                <div class="revenue-card" id="sponsorships">
+                    <h3>Sponsorluklar</h3>
+                    <div class="sponsor-list" id="active-sponsors">
+                        <!-- Aktif sponsorlar burada listelenecek -->
+                    </div>
+                    <button onclick="negotiateSponsorship()">Yeni Sponsor Ara</button>
+                </div>
+
+                <div class="revenue-card" id="merchandise">
+                    <h3>Merchandise Satışları</h3>
+                    <div class="merchandise-stats">
+                        <p>Haftalık Satış: $<span id="merch-sales">0</span></p>
+                        <p>Fan Memnuniyeti: <span id="fan-satisfaction">0</span>%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="expenses">
+            <h2>Giderler</h2>
+            <div class="expenses-grid">
+                <div class="expense-card" id="salaries">
+                    <h3>Maaş Giderleri</h3>
+                    <p>Toplam: $<span id="total-salaries">0</span></p>
+                    <div class="salary-chart-container">
+                        <canvas id="salaryChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="expense-card" id="facility">
+                    <h3>Tesis Giderleri</h3>
+                    <p>Aylık: $<span id="facility-cost">0</span></p>
+                    <button onclick="upgradeFacility()">Tesis Geliştir</button>
+                </div>
+
+                <div class="expense-card" id="marketing">
+                    <h3>Pazarlama Giderleri</h3>
+                    <div class="marketing-options">
+                        <button onclick="startMarketingCampaign('local')">Yerel Kampanya</button>
+                        <button onclick="startMarketingCampaign('national')">Ulusal Kampanya</button>
+                        <button onclick="startMarketingCampaign('social')">Sosyal Medya</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="financial-history">
+            <h2>Finansal Geçmiş</h2>
+            <div class="chart-container">
+                <canvas id="financeChart"></canvas>
+            </div>
+            <div id="transaction-history">
+                <!-- İşlem geçmişi burada listelenecek -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+    <script src="global.js"></script>
+    <script src="finances.js"></script>
+</body>
+</html> 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Team Turnuvası - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tournaments.css">
+    <link rel="stylesheet" href="dreamteam.css">
+</head>
+<body>
+    <header>
+        <h1>Dream Team Turnuvası</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="myteam.html">Takımım</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="market.html">Market</a></li>
+                <li><a href="finances.html">Finans</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dream-teams-section">
+            <h2>Dream Team Takımları</h2>
+            <div class="teams-grid">
+                <!-- Takımlar JavaScript ile buraya eklenecek -->
+            </div>
+        </section>
+
+        <section class="tournament-bracket" style="display: none;">
+            <!-- Turnuva fikstürü buraya gelecek -->
+        </section>
+
+        <!-- Maç ekranı -->
+        <section class="match-screen" style="display: none;">
+            <div class="score-board">
+                <div class="team home">
+                    <h3></h3>
+                    <div class="score">0</div>
+                </div>
+                <div class="match-info">
+                    <div class="quarter">Çeyrek 1</div>
+                    <div class="time">10:00</div>
+                </div>
+                <div class="team away">
+                    <h3></h3>
+                    <div class="score">0</div>
+                </div>
+            </div>
+            <div class="game-log">
+                <!-- Maç olayları buraya eklenecek -->
+            </div>
+            <div class="match-controls">
+                <button class="return-button" onclick="returnToTeams()">Turnuvaya Dön</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="dreamteam.js"></script>
+</body>
+</html> 

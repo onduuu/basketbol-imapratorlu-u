@@ -1,0 +1,383 @@
+/* Genel stil kurallarınız */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+
+/* Oyuncu kartları için genel stiller */
+.player-card {
+    position: relative;
+    border: 2px solid;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.player-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.quality-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+/* Kaliteye göre kart renkleri - Daha belirgin renkler */
+.quality-D, .quality-D-minus, .quality-D-plus {
+    border: 3px solid #666666;
+    background: linear-gradient(135deg, #4a4a4a 0%, #ffffff 100%);
+    box-shadow: 0 4px 8px rgba(74, 74, 74, 0.3);
+}
+
+.quality-C, .quality-C-minus, .quality-C-plus {
+    border: 3px solid #a0a0a0;
+    background: linear-gradient(135deg, #808080 0%, #ffffff 100%);
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.3);
+}
+
+.quality-B, .quality-B-minus, .quality-B-plus {
+    border: 3px solid #27ae60;
+    background: linear-gradient(135deg, #2ecc71 0%, #ffffff 100%);
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
+
+.quality-A, .quality-A-minus, .quality-A-plus {
+    border: 3px solid #2980b9;
+    background: linear-gradient(135deg, #3498db 0%, #ffffff 100%);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.quality-S, .quality-S-minus, .quality-S-plus {
+    border: 3px solid #e84393;
+    background: linear-gradient(135deg, #fd79a8 0%, #ffffff 100%);
+    box-shadow: 0 4px 8px rgba(232, 67, 147, 0.3);
+}
+
+/* Kaliteye göre rozet renkleri */
+.quality-D .quality-badge, 
+.quality-D-minus .quality-badge, 
+.quality-D-plus .quality-badge {
+    background-color: #4a4a4a;
+    color: white;
+}
+
+.quality-C .quality-badge, 
+.quality-C-minus .quality-badge, 
+.quality-C-plus .quality-badge {
+    background-color: #808080;
+    color: white;
+}
+
+.quality-B .quality-badge, 
+.quality-B-minus .quality-badge, 
+.quality-B-plus .quality-badge {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.quality-A .quality-badge, 
+.quality-A-minus .quality-badge, 
+.quality-A-plus .quality-badge {
+    background-color: #3498db;
+    color: white;
+}
+
+.quality-S .quality-badge, 
+.quality-S-minus .quality-badge, 
+.quality-S-plus .quality-badge {
+    background-color: #e84393;
+    color: white;
+}
+
+/* Popup stili */
+.player-popup {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 105%;
+    top: 0;
+    width: 300px;
+    background: white;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Kaliteye göre popup border renkleri */
+.quality-D .player-popup, 
+.quality-D-minus .player-popup, 
+.quality-D-plus .player-popup {
+    border-color: #4a4a4a;
+}
+
+.quality-C .player-popup, 
+.quality-C-minus .player-popup, 
+.quality-C-plus .player-popup {
+    border-color: #808080;
+}
+
+.quality-B .player-popup, 
+.quality-B-minus .player-popup, 
+.quality-B-plus .player-popup {
+    border-color: #2ecc71;
+}
+
+.quality-A .player-popup, 
+.quality-A-minus .player-popup, 
+.quality-A-plus .player-popup {
+    border-color: #3498db;
+}
+
+.quality-S .player-popup, 
+.quality-S-minus .player-popup, 
+.quality-S-plus .player-popup {
+    border-color: #e84393;
+}
+
+/* Popup içeriği */
+.player-popup .player-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.player-popup .stat-item {
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.player-popup .stat-label {
+    font-weight: bold;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.player-popup .stat-value {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Hover efektlerini güçlendir */
+.player-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Kaliteye göre hover efektleri */
+.quality-D:hover, .quality-D-minus:hover, .quality-D-plus:hover {
+    box-shadow: 0 8px 16px rgba(74, 74, 74, 0.4);
+}
+
+.quality-C:hover, .quality-C-minus:hover, .quality-C-plus:hover {
+    box-shadow: 0 8px 16px rgba(128, 128, 128, 0.4);
+}
+
+.quality-B:hover, .quality-B-minus:hover, .quality-B-plus:hover {
+    box-shadow: 0 8px 16px rgba(46, 204, 113, 0.4);
+}
+
+.quality-A:hover, .quality-A-minus:hover, .quality-A-plus:hover {
+    box-shadow: 0 8px 16px rgba(52, 152, 219, 0.4);
+}
+
+.quality-S:hover, .quality-S-minus:hover, .quality-S-plus:hover {
+    box-shadow: 0 8px 16px rgba(232, 67, 147, 0.4);
+}
+
+.player-card:hover .player-popup {
+    display: block;
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.energy-value {
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.energy-high {
+    color: #27ae60;
+}
+
+.energy-medium {
+    color: #f39c12;
+}
+
+.energy-low {
+    color: #e74c3c;
+}
+
+/* Level sistemi stilleri */
+.level-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+}
+
+.level-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.level-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.xp-bar {
+    width: 150px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.xp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    transition: width 0.3s ease;
+}
+
+.xp-text {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.level-up-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeInOut 3s ease;
+    z-index: 2000;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+}
+
+/* Global para göstergesi stilleri */
+.money-display {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.coin-icon {
+    color: #FFD700;
+    font-size: 1.1em;
+    margin: 0 2px;
+}
+
+#money-amount {
+    color: white;
+}

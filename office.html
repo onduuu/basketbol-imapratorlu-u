@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofis - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="office.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>NBA Manager Game - Ofis</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="myteam.html">Takımım</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="office.html">Ofis</a></li>
+                <li><a href="market.html">Market</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Oyuncu listesi bölümü -->
+        <section id="team-overview">
+            <h2>Takım Oyuncuları</h2>
+            <div class="player-container">
+                <div id="player-list" class="player-grid">
+                    <!-- Oyuncular JavaScript ile buraya eklenecek -->
+                </div>
+                <button id="nextPlayerBtn" class="next-player-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Ekipman bölümü -->
+        <section id="equipment-section">
+            <!-- Sol taraf: Oyuncu Seçimi -->
+            <div id="player-selection">
+                <h3>Ekipman Giydirilecek Oyuncuyu Seçin</h3>
+                <div id="player-list" class="player-grid"></div>
+            </div>
+
+            <!-- Sağ taraf: Ekipman Kategorileri -->
+            <div class="equipment-categories">
+                <div class="category" data-type="shoes">
+                    <h3>Ayakkabılar</h3>
+                    <div class="equipment-grid" id="shoes-grid"></div>
+                </div>
+
+                <div class="category" data-type="kneepads">
+                    <h3>Dizlikler</h3>
+                    <div class="equipment-grid" id="kneepads-grid"></div>
+                </div>
+
+                <div class="category" data-type="jersey">
+                    <h3>Formalar</h3>
+                    <div class="equipment-grid" id="jersey-grid"></div>
+                </div>
+
+                <div class="category" data-type="wristband">
+                    <h3>Bileklikler</h3>
+                    <div class="equipment-grid" id="wristband-grid"></div>
+                </div>
+
+                <div class="category" data-type="headband">
+                    <h3>Kafa Bantları</h3>
+                    <div class="equipment-grid" id="headband-grid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="office.js"></script>
+</body>
+</html> 

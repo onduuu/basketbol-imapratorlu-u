@@ -1,0 +1,439 @@
+/* Genel stil */
+#equipment-section {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Sol: oyuncular, Sağ: ekipmanlar */
+    gap: 20px;
+}
+
+/* Oyuncu seçim bölümü */
+#player-selection {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.player-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.player-card {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px;
+    margin: 0;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    animation: slideIn 0.3s ease;
+}
+
+.player-card.selected {
+    border: 2px solid #4CAF50;
+    transform: translateY(-5px);
+}
+
+/* Ekipman kategorileri */
+.equipment-categories {
+    display: grid;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.category {
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.category h3 {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+/* Ekipman grid'i */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* 120px'den 100px'e düşürüldü */
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* Ekipman kartları */
+.equipment-card {
+    padding: 8px;
+    font-size: 0.85em;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    cursor: grab;
+    transition: all 0.3s ease;
+}
+
+.equipment-card h4 {
+    margin: 4px 0;
+    font-size: 0.9em;
+}
+
+.equipment-card img {
+    width: 40px; /* 50px'den 40px'e düşürüldü */
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Nadirlik renkleri */
+.rarity-common { border: 2px solid #b0bec5; box-shadow: 0 0 5px rgba(176, 190, 197, 0.5); }
+.rarity-rare { border: 2px solid #2196F3; box-shadow: 0 0 5px rgba(33, 150, 243, 0.5); }
+.rarity-epic { border: 2px solid #9C27B0; box-shadow: 0 0 5px rgba(156, 39, 176, 0.5); }
+.rarity-legendary { border: 2px solid #FFC107; box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); }
+.rarity-mythical { border: 2px solid #FF4081; box-shadow: 0 0 5px rgba(255, 64, 129, 0.5); }
+
+/* Ekipman hover efekti */
+.equipment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Ekipman stats */
+.equipment-stats {
+    margin-top: 6px;
+    font-size: 0.75em;
+    color: #666;
+}
+
+.stat-boost {
+    padding: 1px 3px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Sürükle-bırak stilleri */
+.equipment-card:active {
+    cursor: grabbing;
+}
+
+.equipment-card.dragging {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.player-card.drag-over {
+    border: 2px dashed #3498db;
+    transform: scale(1.02);
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Ekipman özet görünümü */
+.equipment-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.equipment-item {
+    font-size: 0.8em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.1);
+}
+
+/* Ekipman slotları için stil */
+.equipment-slots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.equipment-slot {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.05);
+}
+
+.equipment-slot img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+/* Ekipman seviyesi göstergesi */
+.equipment-level {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #4CAF50;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+/* Ekipman nadirlikleri için renkler */
+.equipment-slot.common { border-color: #b8b8b8; }
+.equipment-slot.rare { border-color: #3498db; }
+.equipment-slot.epic { border-color: #9b59b6; }
+.equipment-slot.legendary { border-color: #f1c40f; }
+.equipment-slot.mythical { border-color: #e74c3c; }
+
+/* Ekipman bonusları için stiller */
+.equipment-bonuses {
+    margin-top: 10px;
+    padding: 5px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+.bonus-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 5px;
+    font-size: 0.8em;
+}
+
+.stat-name {
+    color: #666;
+}
+
+.stat-value {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Hover efektleri */
+.equipment-slot:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.equipment-slot img:hover {
+    filter: brightness(1.1);
+}
+
+/* Responsive düzen */
+@media (max-width: 1200px) {
+    #equipment-section {
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    #equipment-section {
+        grid-template-columns: 1fr;
+    }
+    
+    #player-selection {
+        position: static;
+    }
+    
+    .player-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Sayfalama kontrolleri için stiller */
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pagination-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #45a049;
+}
+
+.pagination-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 0.9em;
+    color: #666;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Animasyon */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.next-player-btn {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.next-player-btn:hover {
+    background: #2980b9;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.player-container {
+    position: relative;
+    /* Mevcut stiller korunacak */
+}
+
+/* Takım genel görünümü için stiller */
+#team-overview {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.player-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+}
+
+.player-info {
+    text-align: center;
+}
+
+.player-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: block;
+}
+
+.player-name {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.player-position {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.player-stats {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+}
+
+/* Geri dönüş animasyonu için */
+.equipment-card.returning {
+    transition: all 0.3s ease;
+}
+
+.no-equipment-message {
+    padding: 10px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    background: rgba(0,0,0,0.05);
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Mevcut CSS'e eklenecek */
+.dragging {
+    opacity: 0.8;
+    cursor: grabbing;
+}
+
+.drag-over {
+    border: 2px dashed #4CAF50;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+#dragging-clone {
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Touch cihazlar için özel stiller */
+@media (hover: none) and (pointer: coarse) {
+    .equipment-card {
+        touch-action: none; /* Varsayılan touch davranışlarını engelle */
+    }
+    
+    .player-card {
+        touch-action: none;
+    }
+}

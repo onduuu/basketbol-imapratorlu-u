@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Menajer Oyunu - Turnuvalar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tournaments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>NBA Menajer Oyunu - Turnuvalar</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="myteam.html">Takımım</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="market.html">Market</a></li>
+                <li><a href="finances.html">Finans</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Turnuva Seçim Ekranı -->
+        <section id="tournament-selection" class="tournament-section">
+            <h2>Turnuvalar</h2>
+            <div class="tournament-list">
+                <div class="tournament-card" data-tournament="league">
+                    <h3>Türkiye Ligi</h3>
+                    <p>Sezon: 2023-2024</p>
+                    <p>Ödül: 1,000,000₺</p>
+                    <button class="join-button">Katıl</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maç Ekranı (Başlangıçta gizli) -->
+        <section id="match-screen" class="match-section" style="display: none;">
+            <!-- Maç detayları buraya gelecek -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="tournaments.js"></script>
+</body>
+</html>

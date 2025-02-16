@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scout - NBA Manager Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scouting.css">
+    
+    <!-- Ortak Font ve Icon Kütüphaneleri -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>NBA Manager Game</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="myteam.html">My Team</a></li>
+                <li><a href="tournaments.html">Turnuvalar</a></li>
+                <li><a href="training.html">Antrenman</a></li>
+                <li><a href="scouting.html">Scout</a></li>
+                <li><a href="market.html">Market</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="scouting-section">
+            <h2>Scout Departmanı</h2>
+            
+            <!-- Scout Departmanı Bilgileri -->
+            <div class="scout-info">
+                <div class="scout-level">
+                    <h3>Scout Seviyesi: <span id="scout-level">1</span></h3>
+                    <button onclick="upgradeScout()">Departmanı Geliştir</button>
+                    <p>Maliyet: $<span id="upgrade-cost">5000</span></p>
+                </div>
+            </div>
+
+            <!-- Scout Seçenekleri -->
+            <div class="scout-options">
+                <button onclick="scoutLocal()">Yerel Oyuncu Ara</button>
+                <button onclick="scoutInternational()">Uluslararası Oyuncu Ara</button>
+                <button onclick="scoutCollege()">Üniversite Oyuncusu Ara</button>
+            </div>
+
+            <!-- Keşfedilen Oyuncular -->
+            <div id="discovered-players" class="players-grid">
+                <!-- Oyuncular JS ile buraya eklenecek -->
+            </div>
+
+            <button onclick="saveStartingFive()" class="save-button">İlk 5'i Kaydet</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NBA Manager Game. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="global.js"></script>
+    <script src="scouting.js"></script>
+</body>
+</html> 
